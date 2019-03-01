@@ -7,15 +7,16 @@ import {
   Item,
   Icon,
   Divider,
-  Segment,
-  Form
+  Segment
 } from 'semantic-ui-react'
 import CheckoutModal from './checkout'
 import RemoveFromCartButton from './removeFromCartButton'
 
-const priceHelper = price => {
-  let ret = `$${price}`
-  return `${ret.slice(0, ret.length - 2) + '.' + ret.slice(ret.length - 2)}`
+const priceFormat = price => {
+  let displayPrice = `$${price}`
+  return `${displayPrice.slice(0, displayPrice.length - 2) +
+    '.' +
+    displayPrice.slice(displayPrice.length - 2)}`
 }
 
 const CartModal = props => {
@@ -23,6 +24,7 @@ const CartModal = props => {
   const isLoggedIn = !!userId
 
   let total = 0
+
   return (
     <Modal
       trigger={
@@ -38,52 +40,32 @@ const CartModal = props => {
             const product = userId ? cartItem.product : cartItem
             if (product) {
               total += product.currentPrice
-              if (product.inventory && product.currentPrice === product.msrp) {
-                return (
-                  <Item key={idx}>
-                    <Item.Image size="tiny" src={product.imageUrl} />
-                    <Item.Content verticalAlign="middle">
-                      <Item.Header>{product.name}</Item.Header>
-                      <Item.Meta>
-                        <span>{priceHelper(product.currentPrice)}</span>
-                        <span>
-                          <RemoveFromCartButton
-                            cart={cartItem}
-                            idx={idx}
-                            loggedIn={isLoggedIn}
-                          />
-                        </span>
-                      </Item.Meta>
-                    </Item.Content>
-                  </Item>
-                )
-              } else {
-                return (
-                  <Item key={idx}>
-                    <Item.Image size="tiny" src={product.imageUrl} />
-                    <Item.Content verticalAlign="middle">
-                      <Item.Header>{product.name}</Item.Header>
-                      <Item.Meta>
-                        <span> {priceHelper(product.currentPrice)}</span>
-                        <span>
-                          <RemoveFromCartButton
-                            cart={cartItem}
-                            idx={idx}
-                            loggedIn={isLoggedIn}
-                          />
-                        </span>
-                      </Item.Meta>
-                    </Item.Content>
-                  </Item>
-                )
-              }
+              return (
+                <Item key={idx}>
+                  <Item.Image size="tiny" src={product.imageUrl} />
+                  <Item.Content verticalAlign="middle">
+                    <Item.Header>{product.name}</Item.Header>
+                    <Item.Meta>{'Size: ' + cartItem.sizes[idx]} </Item.Meta>
+                    <Item.Meta>
+                      <span> {priceFormat(product.currentPrice)}</span>
+                      <span>
+                        <RemoveFromCartButton
+                          cart={cartItem}
+                          idx={idx}
+                          loggedIn={isLoggedIn}
+                        />
+                      </span>
+                    </Item.Meta>
+                  </Item.Content>
+                </Item>
+              )
             }
           })}
         </Item.Group>
         <Divider />
         <Item.Group>
           <Item>
-            <Item.Header>Total: {priceHelper(total)}</Item.Header>
+            <Item.Header>Total: {priceFormat(total)}</Item.Header>
           </Item>
         </Item.Group>
         <Segment color="black" inverted />

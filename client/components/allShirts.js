@@ -1,9 +1,24 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {NavLink} from 'react-router-dom'
-import {Card, Image, Grid, Button, Icon} from 'semantic-ui-react'
+import {
+  Card,
+  Image,
+  Grid,
+  Button,
+  Icon,
+  Menu,
+  Dropdown
+} from 'semantic-ui-react'
 import {cartAdder} from '../store/cart'
 import AddToCartButton from './addToCartButton'
+
+const getSizesOptions = product =>
+  product.sizes.map((size, idx) => ({
+    key: idx,
+    text: size,
+    value: idx
+  }))
 
 export const AllShirts = props => {
   return (
@@ -11,9 +26,9 @@ export const AllShirts = props => {
       {props.products.map(product => {
         return (
           <Grid.Column key={product.id}>
-            <Card style={{width: '200px'}}>
+            <Card style={{width: '300px', height: '400px'}}>
               <Image
-                height="250px"
+                height="300px"
                 width="300px"
                 src={product.imageUrl}
                 href={'./products/' + product.id}
@@ -21,6 +36,13 @@ export const AllShirts = props => {
               <Card.Content>
                 <div className="product name and price">
                   <Card.Header>{product.name}</Card.Header>
+                  <Dropdown
+                    clearable
+                    placeholder="Sizes"
+                    options={getSizesOptions(product)}
+                    simple
+                    item
+                  />
                   <Card.Header>
                     {'$' +
                       product.currentPrice.toString().slice(0, -2) +
