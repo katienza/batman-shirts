@@ -41,61 +41,53 @@ async function seed() {
 
   const products = await Promise.all([
     Product.create({
-      name: 'Batman Arkham Origins',
-      description: 'Batman Arkham Origins Two Sides Mens Short Sleeve Shirt',
+      name: 'Call Batman Tee',
+      description: 'Keep Calm and Call Batman Mens Short Sleeve Shirt',
       sizes: ['M', 'L', 'XL', 'XLL'],
       imageUrl:
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBLoY1Q-_B4Z1LyrPZYF89U89_ncGO2ekxtU_351Z2ZJ8me_83IQ',
-      currentPrice: 1499
+        'https://cdn.shopify.com/s/files/1/0026/5381/4854/products/keep-calm-and-call-batman-t-shirt-superhero-supervillain-dc-comics-mxed-united-states-superherosupervillain-com_178_300x300.jpg?v=1545210008',
+      currentPrice: 1599
     }),
     Product.create({
-      name: 'Joker Fun Tee',
-      description: 'Way So Serious Joker Fun Mens Short Sleeve T-Shirt',
+      name: 'Joker Half Face Tee',
+      description: 'Half Face Joker Fun Mens Short Sleeve T-Shirt',
       sizes: ['M', 'L', 'XL', 'XLL'],
       imageUrl:
-        'https://inst-2.cdn.shockers.de/hs_cdn/out/pictures//master/product/1/the_dark_knight_joker_t_shirt_why_so_serious-original_lizenziertes_batman_t_shirt-23463-1.jpg',
-      currentPrice: 1899
+        'https://cdn.shopify.com/s/files/1/0002/1040/3390/products/840436_740x.jpg?v=1523991529',
+      currentPrice: 2199
     }),
     Product.create({
-      name: 'Batman Chemistry Tee',
+      name: 'Always be Batman T-Shirt',
       description:
-        'Chemistry Table of Elements Batman Mens Short Sleeve T-Shirt',
+        'Always be Yourself Unless You Can be Batman Mens Short Sleeve T-Shirt',
       sizes: ['M', 'L', 'XL', 'XLL'],
       imageUrl:
-        'https://inst-2.cdn.shockers.de/hs_cdn/out/pictures//master/product/1/batman-chemistry-t-shirt--batman-fan-t-shirt--batman-shirt-23467.jpg',
+        'http://www.desibonkers.com/wp-content/uploads/2018/08/batwhite-300x300.jpg',
+      currentPrice: 1999
+    }),
+    Product.create({
+      name: 'Steampunk Batman Tee',
+      description: 'Steampunk Batman Mens Short Sleeve Tee',
+      sizes: ['M', 'L', 'XL', 'XLL'],
+      imageUrl:
+        'https://www.movie-tees.com/uploads/products/thinkgeek-exclusive-steampunk-batman-t-shirt-black-xxl_tg01f78blk2x.jpg',
       currentPrice: 2199
     }),
     Product.create({
-      name: 'Batman Morning Coffee Tee',
-      description: 'I am not a morning person Batman Mens Short Sleeve Tee',
+      name: 'Leg Day Batman Tee',
+      description: 'Batman Never Skips Leg Day Mens Short Sleeve Tee',
       sizes: ['M', 'L', 'XL', 'XLL'],
       imageUrl:
-        'http://www.thinkgeek.com/images/products/zoom/klhu_batman_not_morning_person_shirt_mb.jpg',
-      currentPrice: 2199
-    }),
-    Product.create({
-      name: 'Batman Tee',
-      description: "Can't sit with us Batman Mens Short Sleeve Tee",
-      sizes: ['M', 'L', 'XL', 'XLL'],
-      imageUrl:
-        'https://media.kohlsimg.com/is/image/kohls/3298844?wid=500&hei=500&op_sharpen=1',
+        'https://bornlion.com/wp-content/uploads/2018/12/legday-batman-born-lion-fitness-tshirt.jpg',
       currentPrice: 1499
     }),
     Product.create({
-      name: 'Batman Dads Tee',
-      description: 'Batman for Dads Mens Short Sleeve Tee',
+      name: 'Batman in the Morning Tee',
+      description: 'Not a Morning Person Batman Mens Short Sleeve Tee',
       sizes: ['M', 'L', 'XL', 'XLL'],
       imageUrl:
-        'https://images.fun.com/products/35067/1-2/batman-dad-mens-t-shirt.jpg',
-      currentPrice: 1499
-    }),
-    Product.create({
-      name: 'Newest Batman Tee',
-      description: 'Newest Batman Mens Short Sleeve Tee',
-      sizes: ['M', 'L', 'XL', 'XLL'],
-      imageUrl:
-        'https://movie-fanatic-res.cloudinary.com/iu/s--pvzMGpVg--/t_full/cs_srgb,f_auto,fl_strip_profile.lossy,q_auto:420/v1382714233/ben-affleck-batman-t-shirt.jpg',
-      currentPrice: 1499
+        'https://www.thinkgeek.com/images/products/frontsquare/klhu_batman_not_morning_person_shirt_mb.jpg',
+      currentPrice: 1599
     })
   ])
 
