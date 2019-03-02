@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {Link} from 'react-router'
 import {
   Segment,
   Container,
@@ -17,7 +18,7 @@ export default class Footer extends Component {
 
   render() {
     return (
-      <Segment secondary style={{padding: '1em 0em'}}>
+      <Segment secondary>
         <Container>
           <Grid divided inverted stackable>
             <Grid.Row centered>
@@ -40,7 +41,7 @@ export default class Footer extends Component {
                       <h3>Ken Atienza</h3>
                     </Modal.Content>
                     <Modal.Actions>
-                      <Button color="green" onClick={this.handleClose} inverted>
+                      <Button color="grey" onClick={this.handleClose} inverted>
                         <Icon name="checkmark" /> Got it
                       </Button>
                     </Modal.Actions>
@@ -48,8 +49,23 @@ export default class Footer extends Component {
                   <Modal
                     trigger={<Button>Contact me</Button>}
                     header="Contact the Engineer"
-                    content="If you enjoyed this e-commerce platform, you can reach me at atienza.ken@gmail.com"
-                    actions={[{key: 'done', content: 'Done', positive: true}]}
+                    content={
+                      <div>
+                        <p>
+                          If you enjoyed my e-commerce platform, tell me what
+                          you liked through{' '}
+                          <a href="mailto:atienza.ken@gmail.com">here</a>
+                        </p>
+                      </div>
+                    }
+                    actions={[
+                      {
+                        key: 'done',
+                        content: 'Done',
+                        positive: true,
+                        color: 'grey'
+                      }
+                    ]}
                   />
                 </List>
               </Grid.Row>

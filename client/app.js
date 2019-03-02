@@ -17,11 +17,11 @@ class App extends Component {
     this.props.getCart(this.props.user.id)
     this.props.user.id && this.props.getOrders(this.props.user.id)
     return (
-      <div id="app-container">
+      <div>
         <Sticky>
           <Navbar />
         </Sticky>
-        <main id="app-routes">
+        <main>
           <Switch>
             <Route exact path="/" component={AllShirts} />
             <Route exact path="/products" component={AllShirts} />

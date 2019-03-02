@@ -18,7 +18,7 @@ import Routes from '../routes'
 
 const Navbar = props => {
   return (
-    <Menu color="grey">
+    <Menu inverted color="grey" size="mini" borderless>
       <Menu.Item as={Link} to="/">
         <Image
           circular
@@ -28,15 +28,6 @@ const Navbar = props => {
         />
       </Menu.Item>
       <Menu.Item>
-        <Dropdown text="T-Shirts" button>
-          <Dropdown.Menu>
-            <Dropdown.Item as={Link} to="/products">
-              All T-Shirts
-            </Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
-      </Menu.Item>
-      <Menu.Item position="right">
         <Routes />
       </Menu.Item>
       <Menu.Item>

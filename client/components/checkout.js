@@ -72,7 +72,7 @@ class CheckoutModal extends React.Component {
         open={showModal}
         trigger={
           <Button onClick={() => this.setState({showModal: true})} color="blue">
-            <Icon name="credit card outline" size="large" /> Proceed to checkout
+            <Icon name="credit card outline" /> Proceed to checkout
           </Button>
         }
       >
@@ -80,7 +80,7 @@ class CheckoutModal extends React.Component {
           <Sidebar.Pushable color="blue" as={Segment}>
             <Sidebar.Pusher>
               <Form>
-                <Form.Field width="four">
+                <Form.Field width="six">
                   <label>Email</label>
                   <input
                     placeholder="Enter Email"
@@ -88,7 +88,7 @@ class CheckoutModal extends React.Component {
                     name="email"
                   />
                 </Form.Field>
-                <Form.Field width="three">
+                <Form.Field width="six">
                   <label>First Name</label>
                   <input
                     placeholder="Enter first name"
@@ -96,7 +96,7 @@ class CheckoutModal extends React.Component {
                     name="firstName"
                   />
                 </Form.Field>
-                <Form.Field width="three">
+                <Form.Field width="six">
                   <label>Last Name</label>
                   <input
                     placeholder="Enter last name"
@@ -106,10 +106,10 @@ class CheckoutModal extends React.Component {
                 </Form.Field>
               </Form>
               <Button color="blue" onClick={this.handleClick}>
-                Order Confirmation<Icon
-                  name="arrow alternate circle right outline"
-                  size="large"
-                />
+                Order Confirmation<Icon name="arrow alternate circle right outline" />
+              </Button>
+              <Button color="blue" onClick={this.closeModal}>
+                Continue Shopping
               </Button>
             </Sidebar.Pusher>
           </Sidebar.Pushable>

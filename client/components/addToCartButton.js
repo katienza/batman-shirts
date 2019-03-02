@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import {Button, Icon} from 'semantic-ui-react'
 import {cartAdder} from '../store/cart'
 import {toast, ToastContainer} from 'react-toastify'
+import {css} from 'glamor'
 
 const AddToCartButton = props => {
   return (
@@ -29,7 +30,8 @@ const AddToCartButton = props => {
 
 const notif = productName =>
   toast.info(productName + ' Added To Cart!', {
-    position: 'bottom-right',
+    className: css({background: '#767676 !important'}),
+    position: 'top-right',
     autoClose: 2000,
     hideProgressBar: false,
     closeOnClick: true,

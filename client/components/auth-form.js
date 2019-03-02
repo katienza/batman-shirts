@@ -9,7 +9,9 @@ import {
   Modal,
   Segment,
   Grid,
-  Divider
+  Divider,
+  Message,
+  Icon
 } from 'semantic-ui-react'
 import {GoogleLogin} from 'react-google-login'
 
@@ -24,70 +26,75 @@ const AuthForm = props => {
   const {displayName, handleSubmit, error} = props
 
   return (
-    <Modal trigger={<Button>Login | Signup</Button>}>
-      <Modal.Content>
-        <Segment placeholder>
-          <Grid columns={2} relaxed="very" stackable verticalAlign="middle">
-            <Grid.Column>
-              <Form unstackable onSubmit={handleSubmit} name="login">
-                <Form.Input
-                  name="email"
-                  label="email"
-                  placeholder="email"
-                  type="text"
-                />
-                <Form.Input
-                  name="password"
-                  label="password"
-                  placeholder="password"
-                  type="password"
-                />
-                <Form.Button content="Login" primary type="submit" />
-                <GoogleLogin
-                  clientId="116286742111-55fq55eqqfkfj122hit40rn9k7hkdlav.apps.googleusercontent.com"
-                  buttonText="Login"
-                  onSuccess={responseGoogle}
-                  onFailure={responseGoogle}
-                />
-              </Form>
-            </Grid.Column>
-            <Grid.Column stretched>
-              <Form unstackable onSubmit={handleSubmit} name="signup">
-                <Form.Input
-                  name="email"
-                  label="email"
-                  placeholder="email"
-                  type="text"
-                />
-                <Form.Input
-                  name="password"
-                  label="password"
-                  placeholder="password"
-                  type="password"
-                />
-                <Form.Input
-                  label="firstName"
-                  name="firstName"
-                  placeholder="firstName"
-                  type="string"
-                />
+    <div>
+      <Modal trigger={<Button id="auth-form-login">Login | Signup</Button>}>
+        <Modal.Content>
+          <Segment placeholder>
+            <GoogleLogin
+              clientId="116286742111-55fq55eqqfkfj122hit40rn9k7hkdlav.apps.googleusercontent.com"
+              buttonText="Login"
+              onSuccess={responseGoogle}
+              onFailure={responseGoogle}
+            />
+            <Grid columns={2} relaxed="very" stackable verticalAlign="middle">
+              <Grid.Column>
+                <Form unstackable onSubmit={handleSubmit} name="login">
+                  <Form.Input
+                    name="email"
+                    label="email"
+                    placeholder="email"
+                    type="text"
+                  />
+                  <Form.Input
+                    name="password"
+                    label="password"
+                    placeholder="password"
+                    type="password"
+                  />
+                  <Form.Button content="Login" primary type="submit" />
+                </Form>
+              </Grid.Column>
 
-                <Form.Input
-                  label="lastName"
-                  name="lastName"
-                  placeholder="lastName"
-                  type="string"
-                />
+              <Grid.Column stretched>
+                <Form unstackable onSubmit={handleSubmit} name="signup">
+                  <Form.Input
+                    name="email"
+                    label="email"
+                    placeholder="email"
+                    type="text"
+                  />
+                  <Form.Input
+                    name="password"
+                    label="password"
+                    placeholder="password"
+                    type="password"
+                  />
+                  <Form.Input
+                    label="firstName"
+                    name="firstName"
+                    placeholder="firstName"
+                    type="string"
+                  />
 
-                <Form.Button content="Signup" primary type="submit" />
-              </Form>
-            </Grid.Column>
-            {error && error.response && <div> {error.response.data} </div>}
-          </Grid>
-          <Divider vertical>Or</Divider>
-        </Segment>
-      </Modal.Content>
-    </Modal>
+                  <Form.Input
+                    label="lastName"
+                    name="lastName"
+                    placeholder="lastName"
+                    type="string"
+                  />
+
+                  <Form.Button content="Signup" primary type="submit" />
+                </Form>
+              </Grid.Column>
+              <Message attached="bottom" warning>
+                <Icon name="warning sign" />
+                {error && error.response && <div> {error.response.data} </div>}
+              </Message>
+            </Grid>
+          </Segment>
+        </Modal.Content>
+      </Modal>
+    </div>
   )
 }
 /**

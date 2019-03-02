@@ -1,5 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import Link from 'react-router'
 import {
   Button,
   Modal,
@@ -22,16 +23,18 @@ const priceFormat = price => {
 const CartModal = props => {
   const {cart, userId} = props
   const isLoggedIn = !!userId
+  console.log('PROPS ---', props)
 
   let total = 0
 
   return (
     <Modal
       trigger={
-        <Button>
+        <Button id="navbar-cart-modal">
           <Icon name="shopping cart" size="large" />
         </Button>
       }
+      closeIcon
     >
       <Header icon="shopping cart" content="Shopping Cart" />
       <Modal.Content>
