@@ -1,5 +1,4 @@
 import axios from 'axios'
-import {CommentActions} from 'semantic-ui-react'
 
 // ACTION TYPES
 const SET_ORDER = 'SET_ORDER'

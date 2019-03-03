@@ -27,7 +27,10 @@ const AuthForm = props => {
 
   return (
     <div>
-      <Modal trigger={<Button id="auth-form-login">Login | Signup</Button>}>
+      <Modal
+        trigger={<Button id="auth-form-login">Login | Signup</Button>}
+        closeIcon
+      >
         <Modal.Content>
           <Segment placeholder>
             <GoogleLogin
@@ -86,10 +89,19 @@ const AuthForm = props => {
                   <Form.Button content="Signup" primary type="submit" />
                 </Form>
               </Grid.Column>
-              <Message attached="bottom" warning>
-                <Icon name="warning sign" />
-                {error && error.response && <div> {error.response.data} </div>}
-              </Message>
+              {error ? (
+                <Message attached="bottom" warning>
+                  <Icon name="warning sign" />
+                  {error &&
+                    error.response && <div> {error.response.data} </div>}
+                </Message>
+              ) : (
+                <Message attached="bottom" warning hidden>
+                  <Icon name="warning sign" />
+                  {error &&
+                    error.response && <div> {error.response.data} </div>}
+                </Message>
+              )}
             </Grid>
           </Segment>
         </Modal.Content>

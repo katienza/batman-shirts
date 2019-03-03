@@ -1,21 +1,31 @@
 import axios from 'axios'
-import products from './products'
-import {runInNewContext} from 'vm'
 
 //ACTION TYPES
 const GOT_CART = 'GOT_CART'
 const ADD_TO_CART = 'ADD_TO_CART'
+const SET_QUANTITY = 'SET_QUANTITY'
 const FINISH_ORDER = 'FINISH_ORDER'
 const DELETE_FROM_CART = 'DELETE_FROM_CART'
 const DELETE_FROM_GUEST_CART = 'DELETE_FROM_GUEST_CART'
 
 //INITIAL STATE
+
 const defaultCart = []
 
 //ACTION CREATORS
-// const getCart = cart => ({type: GET_CART, cart})
-const addToCart = productToAdd => {
-  return {type: ADD_TO_CART, productToAdd}
+const addToCart = (productToAdd, quantity = 1) => {
+  return {
+    type: ADD_TO_CART,
+    productToAdd: Object.assign(productToAdd, {quantity})
+  }
+}
+
+export const setQuantity = (productId, quantity) => {
+  return {
+    type: SET_QUANTITY,
+    productId,
+    quantity
+  }
 }
 
 const gotCart = cart => {
@@ -116,7 +126,6 @@ export const deleteFromCartThunk = (cartId, idx, loggedIn) => {
 export const finishOrder = user => {
   return async dispatch => {
     try {
-      //axios post to order histories here
       await axios.delete(`/api/users/${user.id}/cart`)
       dispatch(finishedOrder())
     } catch (error) {
@@ -139,11 +148,18 @@ export default function(state = defaultCart, action) {
     case GOT_CART:
       return action.userCart
     case ADD_TO_CART:
-      if (state) {
-        return [...state, action.productToAdd]
-      } else {
-        return [action.productToAdd]
-      }
+      return [...state, action.productToAdd]
+    case SET_QUANTITY:
+      return (() => {
+        let newState = [...state]
+
+        for (let i = 0; i < newState.length; i++) {
+          if (newState[i].id === state.id) {
+            newState[i].quantity = action.products.quantity
+          }
+        }
+        return newState
+      })()
     case FINISH_ORDER:
       return action.emptycart
     case DELETE_FROM_CART:

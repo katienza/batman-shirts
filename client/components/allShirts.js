@@ -13,7 +13,7 @@ const getSizesOptions = product =>
 
 export const AllShirts = props => {
   return (
-    <Grid container columns={5} doubling>
+    <Grid columns={5} doubling>
       {props.products.map(product => {
         return (
           <Grid.Column key={product.id}>
@@ -30,10 +30,13 @@ export const AllShirts = props => {
                     item
                   />
                   <Card.Header>
-                    {'$' +
-                      product.currentPrice.toString().slice(0, -2) +
-                      '.' +
-                      product.currentPrice.toString().slice(-2)}
+                    <span>
+                      {'$' +
+                        product.currentPrice.toString().slice(0, -2) +
+                        '.' +
+                        product.currentPrice.toString().slice(-2)}
+                    </span>
+                    <br />
                     <AddToCartButton product={product} />
                   </Card.Header>
                 </div>

@@ -17,11 +17,12 @@ class App extends Component {
     this.props.getCart(this.props.user.id)
     this.props.user.id && this.props.getOrders(this.props.user.id)
     return (
-      <div>
-        <Sticky>
-          <Navbar />
-        </Sticky>
-        <main>
+      <div style={{overflowX: 'hidden', overflowY: 'scroll', height: '80vh'}}>
+        <Navbar />
+        <main
+          className="ui main text"
+          style={{paddingLeft: '3rem', paddingRight: '3rem'}}
+        >
           <Switch>
             <Route exact path="/" component={AllShirts} />
             <Route exact path="/products" component={AllShirts} />

@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import {Item, Button} from 'semantic-ui-react'
+import {Item, Button, Dropdown} from 'semantic-ui-react'
 import {shirts} from '../store/singleProduct'
 import AddToCartButton from './addToCartButton'
 
@@ -13,9 +13,17 @@ const priceFormat = price => {
   )
 }
 
+const getSizesOptions = product =>
+  product.sizes.map((size, idx) => ({
+    key: idx,
+    text: size,
+    value: idx
+  }))
+
 class singleProduct extends Component {
   constructor(props) {
     super(props)
+
     this.routeChange = this.routeChange.bind(this)
   }
 
@@ -31,8 +39,12 @@ class singleProduct extends Component {
   render() {
     const {singleProduct} = this.props
 
+    if (Object.keys(singleProduct).length === 0) {
+      return <div />
+    }
+
     return (
-      <div>
+      <div className="ui text container">
         <Item.Group>
           <Item>
             <Item.Image size="medium" src={singleProduct.imageUrl} rounded />
@@ -44,6 +56,14 @@ class singleProduct extends Component {
                 Product Description: {singleProduct.description}
               </Item.Description>
 
+              <Dropdown
+                clearable
+                placeholder="Sizes"
+                options={getSizesOptions(singleProduct)}
+                simple
+                item
+              />
+
               <Item.Meta>
                 {
                   <div>
@@ -53,7 +73,12 @@ class singleProduct extends Component {
               </Item.Meta>
 
               <AddToCartButton product={singleProduct} />
-              <Button onClick={this.routeChange} align="center" circular>
+              <Button
+                onClick={this.routeChange}
+                align="center"
+                circular
+                style={{verticalAlign: 'middle'}}
+              >
                 Continue Shopping
               </Button>
             </Item.Content>

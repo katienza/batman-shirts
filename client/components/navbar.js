@@ -18,7 +18,7 @@ import Routes from '../routes'
 
 const Navbar = props => {
   return (
-    <Menu inverted color="grey" size="mini" borderless>
+    <Menu className="fixed" inverted color="grey" size="mini" borderless>
       <Menu.Item as={Link} to="/">
         <Image
           circular

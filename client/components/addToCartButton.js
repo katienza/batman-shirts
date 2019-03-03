@@ -7,7 +7,7 @@ import {css} from 'glamor'
 
 const AddToCartButton = props => {
   return (
-    <div>
+    <div style={{display: 'inline-block', marginRight: '0.75rem'}}>
       <ToastContainer
         autoClose={5000}
         hideProgressBar={false}

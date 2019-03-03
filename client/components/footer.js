@@ -18,7 +18,7 @@ export default class Footer extends Component {
 
   render() {
     return (
-      <Segment secondary>
+      <Segment className="footer" secondary style={{zIndex: 999}}>
         <Container>
           <Grid divided inverted stackable>
             <Grid.Row centered>
