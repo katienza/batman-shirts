@@ -24,17 +24,6 @@ const priceFormat = price => {
 class CartModal extends Component {
   constructor(props) {
     super(props)
-
-    this.handleAddQuantity = this.handleAddQuantity.bind(this)
-    this.handleReduceQuantity = this.handleReduceQuantity.bind(this)
-  }
-
-  handleAddQuantity = id => {
-    this.props.addQuantity(id)
-  }
-
-  handleReduceQuantity = id => {
-    this.props.reduceQuantity(id)
   }
 
   render() {
@@ -51,6 +40,7 @@ class CartModal extends Component {
           </Button>
         }
         closeIcon
+        style={{overflowX: 'hidden'}}
       >
         <Header icon="shopping cart" content="Shopping Cart" />
         <h3>You have ordered: </h3>

@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const {Product, Review, User} = require('../db/models/')
+const {Product, User} = require('../db/models/')
 
 // Get all products, full route /api/products
 router.get('/', async (req, res, next) => {

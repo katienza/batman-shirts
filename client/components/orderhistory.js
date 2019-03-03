@@ -9,6 +9,7 @@ const priceHelper = price => {
 
 const orderList = props => {
   const {orderHistory} = props
+
   return (
     <div>
       <Segment>
@@ -25,7 +26,6 @@ const orderList = props => {
                       <span>{priceHelper(orders.checkoutPrice)}</span>
                     </div>
                     <span>{orders.createdAt.slice(0, 10)}</span>
-                    <div> Shipped to: {orders.address} </div>
                   </Item.Meta>
                 </Item.Content>
               </Item>

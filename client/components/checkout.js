@@ -2,30 +2,27 @@ import React from 'react'
 import {
   Button,
   Modal,
-  Header,
-  Item,
   Icon,
-  Divider,
   Form,
   Segment,
-  Sidebar
+  Sidebar,
+  Message
 } from 'semantic-ui-react'
 import {connect} from 'react-redux'
 import {finishOrder, finishOrderGuest} from '../store/cart'
 import {postOrder, postGuestOrder} from '../store/orderHistory'
 
 class CheckoutModal extends React.Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
       showModal: false,
-      transactions: [],
       visible: false,
-      animation: 'overlay',
       firstName: '',
       lastName: '',
       email: ''
     }
+
     this.handleClick = this.handleClick.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChangePayment = this.handleChangePayment.bind(this)
@@ -63,9 +60,17 @@ class CheckoutModal extends React.Component {
   closeModal() {
     this.setState({showModal: false})
   }
+
   render() {
     const {visible, showModal} = this.state
-    const {user} = this.props
+    const orderCheckOut = e => {
+      return this.props.postGuestOrder(
+        e.target.userName,
+        e.target.value,
+        e.target.cart
+      )
+    }
+
     return (
       <Modal
         onClose={this.closeModal}
@@ -105,7 +110,7 @@ class CheckoutModal extends React.Component {
                   />
                 </Form.Field>
               </Form>
-              <Button color="blue" onClick={this.handleClick}>
+              <Button color="blue" onClick={this.handleSubmit}>
                 Order Confirmation<Icon name="arrow alternate circle right outline" />
               </Button>
               <Button color="blue" onClick={this.closeModal}>

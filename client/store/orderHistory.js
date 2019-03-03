@@ -31,11 +31,12 @@ export const getOrders = id => {
     }
   }
 }
-export const postOrder = (address, user, cart) => {
+export const postOrder = (firstName, lastName, user, cart) => {
   const toSend = {
     cart,
     userEmail: user.email,
-    address
+    firstName: user.firstName,
+    lastName: user.lastName
   }
   return async dispatch => {
     try {
@@ -48,11 +49,12 @@ export const postOrder = (address, user, cart) => {
   }
 }
 
-export const postGuestOrder = (address, email, cart) => {
+export const postGuestOrder = (firstName, lastName, email, cart) => {
   const toSend = {
     cart,
     email,
-    address
+    firstName,
+    lastName
   }
   return async dispatch => {
     try {

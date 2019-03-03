@@ -33,12 +33,6 @@ const AuthForm = props => {
       >
         <Modal.Content>
           <Segment placeholder>
-            <GoogleLogin
-              clientId="116286742111-55fq55eqqfkfj122hit40rn9k7hkdlav.apps.googleusercontent.com"
-              buttonText="Login"
-              onSuccess={responseGoogle}
-              onFailure={responseGoogle}
-            />
             <Grid columns={2} relaxed="very" stackable verticalAlign="middle">
               <Grid.Column>
                 <Form unstackable onSubmit={handleSubmit} name="login">
@@ -110,6 +104,12 @@ const AuthForm = props => {
   )
 }
 /**
+  <GoogleLogin
+    clientId="116286742111-55fq55eqqfkfj122hit40rn9k7hkdlav.apps.googleusercontent.com"
+    buttonText="Login"
+    onSuccess={responseGoogle}
+    onFailure={responseGoogle}
+  />
  * CONTAINER
  *   Note that we have two different sets of 'mapStateToProps' functions -
  *   one for Login, and one for Signup. However, they share the same 'mapDispatchToProps'
