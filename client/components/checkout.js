@@ -110,7 +110,10 @@ class CheckoutModal extends React.Component {
                   />
                 </Form.Field>
               </Form>
-              <Button color="blue" onClick={this.handleSubmit}>
+              <Button
+                color="blue"
+                onClick={() => this.props.postGuestOrder(this.props.cart)}
+              >
                 Order Confirmation<Icon name="arrow alternate circle right outline" />
               </Button>
               <Button color="blue" onClick={this.closeModal}>

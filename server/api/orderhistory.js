@@ -60,7 +60,7 @@ router.post('/guestCheckout', async (req, res, next) => {
       subject: 'Batguys Order Confirmation',
       text:
         'Hi, your shirt order was placed with Batguys T-shirt online retailer!',
-      html: `If you would like to modify your order, go back to <a href="batguys.herokuapp.com">Batguys</a>.`
+      html: `If you would like to modify your order, go back to <a href="https://batguys.herokuapp.com/">Batguys</a>.`
     }
 
     try {

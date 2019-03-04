@@ -49,7 +49,7 @@ export const postOrder = (firstName, lastName, user, cart) => {
   }
 }
 
-export const postGuestOrder = (firstName, lastName, email, cart) => {
+export const postGuestOrder = (cart, email, firstName, lastName) => {
   const toSend = {
     cart,
     email,

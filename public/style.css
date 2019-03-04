@@ -19,8 +19,13 @@ body {
 }
 
 #quantity-container {
-  position: absolute;
-  margin-left: 25em;
+  position: relative;
+  margin-top: 2em;
+}
+
+.ui.red.icon.right.floated.button {
+  position: relative;
+  margin-top: 1em;
 }
 
 .ui.menu .item img.logo {
