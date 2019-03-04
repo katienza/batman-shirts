@@ -6,7 +6,6 @@ sendGridMail.setApiKey(
 )
 module.exports = router
 
-// /api/orderhistory get all order history
 router.get('/', async (req, res, next) => {
   try {
     if (!req.user || !req.user.admin) {

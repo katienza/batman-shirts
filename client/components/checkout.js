@@ -23,14 +23,9 @@ class CheckoutModal extends React.Component {
       email: ''
     }
 
-    this.handleClick = this.handleClick.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChangePayment = this.handleChangePayment.bind(this)
     this.closeModal = this.closeModal.bind(this)
-  }
-
-  handleClick() {
-    this.setState({visible: true})
   }
 
   handleSubmit(event, user) {
@@ -62,14 +57,7 @@ class CheckoutModal extends React.Component {
   }
 
   render() {
-    const {visible, showModal} = this.state
-    const orderCheckOut = e => {
-      return this.props.postGuestOrder(
-        e.target.userName,
-        e.target.value,
-        e.target.cart
-      )
-    }
+    const {showModal} = this.state
 
     return (
       <Modal

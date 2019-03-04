@@ -17,7 +17,6 @@ router.get('/', async (req, res, next) => {
   }
 })
 
-//
 router.get('/:userId/cart', async (req, res, next) => {
   try {
     if (req.user.id === !req.params.userId) {

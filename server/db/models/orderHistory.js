@@ -1,7 +1,6 @@
 const Sequelize = require('sequelize')
 const db = require('../db')
 
-// ID, userID (through association), transaction description = {DATE, T-Shirts, TOTAL COST, ADDRESS, PAYMENT}
 const OrderHistory = db.define('orderHistory', {
   productName: {
     type: Sequelize.STRING,

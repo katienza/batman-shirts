@@ -2,9 +2,11 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {Item, Segment, Header} from 'semantic-ui-react'
 
-const priceHelper = price => {
-  let ret = `$${price}`
-  return `${ret.slice(0, ret.length - 2) + '.' + ret.slice(ret.length - 2)}`
+const priceFormat = price => {
+  let displayPrice = `$${price}`
+  return `${displayPrice.slice(0, displayPrice.length - 2) +
+    '.' +
+    displayPrice.slice(displayPrice.length - 2)}`
 }
 
 const orderList = props => {
@@ -23,7 +25,7 @@ const orderList = props => {
                   <Item.Header>{orders.productName}</Item.Header>
                   <Item.Meta>
                     <div>
-                      <span>{priceHelper(orders.checkoutPrice)}</span>
+                      <span>{priceFormat(orders.checkoutPrice)}</span>
                     </div>
                     <span>{orders.createdAt.slice(0, 10)}</span>
                   </Item.Meta>

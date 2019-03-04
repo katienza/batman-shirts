@@ -4,12 +4,10 @@ import PropTypes from 'prop-types'
 import {auth} from '../store'
 import {
   Form,
-  Container,
   Button,
   Modal,
   Segment,
   Grid,
-  Divider,
   Message,
   Icon
 } from 'semantic-ui-react'
@@ -17,11 +15,12 @@ import {GoogleLogin} from 'react-google-login'
 
 /**
  * COMPONENT
- */
+
 const responseGoogle = response => {
   console.log(response)
 }
 
+/*
 const AuthForm = props => {
   const {displayName, handleSubmit, error} = props
 
@@ -115,7 +114,7 @@ const AuthForm = props => {
  *   one for Login, and one for Signup. However, they share the same 'mapDispatchToProps'
  *   function, and share the same Component. This is a good example of how we
  *   can stay DRY with interfaces that are very similar to each other!
- */
+
 const mapLogin = state => {
   return {
     name: 'login',
@@ -150,15 +149,16 @@ const mapDispatch = dispatch => {
   }
 }
 
-export const Login = connect(mapLogin, mapDispatch)(AuthForm)
-export const Signup = connect(mapSignup, mapDispatch)(AuthForm)
+// export const Login = connect(mapLogin, mapDispatch)(AuthForm)
+// export const Signup = connect(mapSignup, mapDispatch)(AuthForm)
 
 /**
  * PROP TYPES
- */
+
 AuthForm.propTypes = {
   name: PropTypes.string.isRequired,
   displayName: PropTypes.string.isRequired,
   handleSubmit: PropTypes.func.isRequired,
   error: PropTypes.object
 }
+*/

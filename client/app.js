@@ -1,11 +1,10 @@
 import React, {Component} from 'react'
 import {Navbar, AllShirts, singleProduct, Footer, orderList} from './components'
-import {Navlink, Switch, Route, withRouter} from 'react-router-dom'
+import {Switch, Route, withRouter} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {shirts} from './store/products'
 import {getCart} from './store/cart'
 import {getOrders} from './store/orderHistory'
-import {Sticky} from 'semantic-ui-react'
 import 'react-toastify/dist/ReactToastify.css'
 
 class App extends Component {

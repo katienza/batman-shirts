@@ -3,16 +3,7 @@ import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {logout} from '../store'
-import {
-  Menu,
-  Image,
-  Dropdown,
-  Icon,
-  Search,
-  Button,
-  Label,
-  Item
-} from 'semantic-ui-react'
+import {Menu, Image, Dropdown, Button} from 'semantic-ui-react'
 import CartModal from './cart'
 import Routes from '../routes'
 
