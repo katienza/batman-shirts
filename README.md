@@ -14,12 +14,12 @@ https://batguys.herokuapp.com/
 
 ## TECH STACK
 
-Javascript
-HTML/CSS
-Semantic UI React
-React/Redux
-Express/Node.js
-PostgreSQL
+`Javascript`
+`HTML/CSS`
+`Semantic UI React`
+`React/Redux`
+`Express/Node.js`
+`PostgreSQL`
 
 ## Setup
 
