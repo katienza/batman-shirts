@@ -24,7 +24,6 @@ const priceFormat = price => {
 const CartModal = props => {
   const {cart, userId} = props
   const isLoggedIn = !!userId
-  console.log('CART[0].sizes ---', cart)
 
   let total = 0
 

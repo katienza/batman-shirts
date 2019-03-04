@@ -6,7 +6,7 @@ import {
   Form,
   Segment,
   Sidebar,
-  Message
+  Popup
 } from 'semantic-ui-react'
 import {connect} from 'react-redux'
 import {finishOrder, finishOrderGuest} from '../store/cart'
@@ -110,12 +110,18 @@ class CheckoutModal extends React.Component {
                   />
                 </Form.Field>
               </Form>
-              <Button
-                color="blue"
-                onClick={() => this.props.postGuestOrder(this.props.cart)}
-              >
-                Order Confirmation<Icon name="arrow alternate circle right outline" />
-              </Button>
+              <Popup
+                content="Thank you for shopping with Batguys! An order confirmation has been sent to your email."
+                on="click"
+                trigger={
+                  <Button
+                    color="blue"
+                    onClick={() => this.props.postGuestOrder(this.props.cart)}
+                  >
+                    Order Confirmation<Icon name="arrow alternate circle right outline" />
+                  </Button>
+                }
+              />
               <Button color="blue" onClick={this.closeModal}>
                 Continue Shopping
               </Button>
