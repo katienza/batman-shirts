@@ -1,9 +1,7 @@
 const router = require('express').Router()
 const {OrderHistory} = require('../db/models')
 const sendGridMail = require('@sendgrid/mail')
-sendGridMail.setApiKey(
-  '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'
-)
+sendGridMail.setApiKey(process.env.SENDGRID_API_KEY)
 module.exports = router
 
 router.get('/', async (req, res, next) => {
