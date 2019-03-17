@@ -44,46 +44,56 @@ class singleProduct extends Component {
     }
 
     return (
-      <div className="ui text container">
-        <Item.Group>
-          <Item>
-            <Item.Image size="medium" src={singleProduct.imageUrl} rounded />
+      <div>
+        <Button
+          id="allshirtssingleview-btn"
+          icon="left arrow"
+          onClick={this.routeChange}
+          align="left"
+          circular
+          style={{verticalAlign: 'middle'}}
+        />
+        <div className="ui text container">
+          <Item.Group>
+            <Item>
+              <Item.Image size="medium" src={singleProduct.imageUrl} rounded />
 
-            <Item.Content>
-              <Item.Header>{singleProduct.name}</Item.Header>
+              <Item.Content>
+                <Item.Header>{singleProduct.name}</Item.Header>
 
-              <Item.Description>
-                Product Description: {singleProduct.description}
-              </Item.Description>
+                <Item.Description>
+                  Product Description: {singleProduct.description}
+                </Item.Description>
 
-              <Dropdown
-                clearable
-                placeholder="Sizes"
-                options={getSizesOptions(singleProduct)}
-                simple
-                item
-              />
+                <Dropdown
+                  clearable
+                  placeholder="Sizes"
+                  options={getSizesOptions(singleProduct)}
+                  simple
+                  item
+                />
 
-              <Item.Meta>
-                {
-                  <div>
-                    <span>{priceFormat(singleProduct.currentPrice)}</span>
-                  </div>
-                }
-              </Item.Meta>
+                <Item.Meta>
+                  {
+                    <div>
+                      <span>{priceFormat(singleProduct.currentPrice)}</span>
+                    </div>
+                  }
+                </Item.Meta>
 
-              <AddToCartButton product={singleProduct} />
-              <Button
+                <AddToCartButton product={singleProduct} />
+                {/* <Button
                 onClick={this.routeChange}
                 align="center"
                 circular
                 style={{verticalAlign: 'middle'}}
               >
                 Continue Shopping
-              </Button>
-            </Item.Content>
-          </Item>
-        </Item.Group>
+              </Button> */}
+              </Item.Content>
+            </Item>
+          </Item.Group>
+        </div>
       </div>
     )
   }

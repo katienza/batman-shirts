@@ -12,7 +12,7 @@ body {
 
 #headerbar-title {
   z-index: 999;
-  position: absolute;
+  position: fixed;
   margin-top: 0.5em;
   padding-left: 4em;
   font-weight: bold;
@@ -102,7 +102,7 @@ body {
   text-size-adjust: 100%;
 }
 #allshirtssingleview-text-description {
-  position: block;
+  display: flex;
   margin-left: 7em;
   font-family: 'Varela Round', sans-serif;
   color: rgb(118, 118, 118) !important;
@@ -140,9 +140,7 @@ body {
 #allshirtssingleview-btns {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
   background-color: white;
-  margin-left: -23em;
 }
 
 .wireframe {
@@ -150,10 +148,7 @@ body {
 }
 
 .ui.footer.segment {
-  bottom: 0;
-  margin: 3em 0em 0em;
-  max-height: 50px;
-  padding: 3em 0em;
+  bottom: -2em;
   position: absolute;
   width: 100%;
 }

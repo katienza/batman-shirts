@@ -9,7 +9,7 @@ const HeaderBar = props => {
   let date = new Date().getFullYear()
 
   return (
-    <Menu id="headerbar" size="mini" stackable borderless>
+    <Menu id="headerbar" size="mini" borderless>
       <Menu.Item as={Link} to="/">
         <Image
           circular

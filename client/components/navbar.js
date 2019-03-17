@@ -9,7 +9,7 @@ import Routes from '../routes'
 
 const Navbar = props => {
   return (
-    <Menu id="navbar" pointing stackable size="large" secondary borderless>
+    <Menu id="navbar" pointing size="large" secondary borderless>
       <span id="navbar-menu-allT">
         <Menu.Item as={Link} to="/">
           ALL TEES
