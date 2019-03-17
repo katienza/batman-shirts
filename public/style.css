@@ -1,9 +1,6 @@
 body {
   height: auto;
-  font-family: 'Lucida Console';
-}
-ui.mini.borderless.fixed.menu {
-  background-color: rgba(0, 0, 0, 0.6);
+  font-family: 'Varela Round', sans-serif;
 }
 
 #headerbar {
@@ -20,8 +17,8 @@ ui.mini.borderless.fixed.menu {
   padding-left: 4em;
   font-weight: bold;
   font-size: 3em;
-  font-family: 'Lucida Console';
-  color: black;
+  font-family: 'Varela Round', sans-serif;
+  color: rgb(72, 72, 72) !important;
 }
 
 #navbar {
@@ -33,11 +30,14 @@ ui.mini.borderless.fixed.menu {
 }
 
 #navbar-menu-allT,
-#navbar-menu-allMensT,
-#navbar-menu-allWomensT {
-  font-family: 'Lucida Console';
-  font-size: 1.5em;
+#navbar-menu-funnyTees {
+  font-family: 'Varela Round', sans-serif;
+  color: rgb(150, 150, 150) !important;
+  font-size: 16px !important;
+  letter-spacing: normal;
+  padding-top: 1em;
   padding-left: 3em;
+  z-index: 999;
 }
 
 #auth-form-login {
@@ -62,12 +62,93 @@ ui.mini.borderless.fixed.menu {
 .ui.menu .item img.logo {
   margin-right: 1.5em;
 }
+
 .main {
   margin-top: 10em;
 }
+
+#allShirts-Title {
+  display: block;
+  position: relative;
+  font-weight: 800 !important;
+  font-size: 24px !important;
+  text-size-adjust: 100%;
+  letter-spacing: normal;
+  font-family: 'Varela Round', sans-serif;
+  color: rgb(72, 72, 72) !important;
+  padding-bottom: 1em;
+}
+#allShirts-Singleview-btn {
+  background-color: white;
+  font-family: 'Varela Round', sans-serif;
+  color: rgb(72, 72, 72) !important;
+  font-size: 18px !important;
+  text-size-adjust: 100%;
+  letter-spacing: normal;
+  padding-left: 0em;
+  padding-bottom: 0em;
+}
+
+#allshirtssingleview-btn {
+  background-color: white;
+}
+
+#allshirtssingleview-text-title {
+  position: block;
+  margin-left: 3em;
+  font-family: 'Varela Round', sans-serif;
+  color: rgb(72, 72, 72) !important;
+  font-size: 24px !important;
+  text-size-adjust: 100%;
+}
+#allshirtssingleview-text-description {
+  position: block;
+  margin-left: 7em;
+  font-family: 'Varela Round', sans-serif;
+  color: rgb(118, 118, 118) !important;
+  font-size: 16px !important;
+  text-size-adjust: 100%;
+}
+
+#allshirtssingleview-card-header {
+  position: block;
+  font-family: 'Varela Round', sans-serif;
+  color: rgb(72, 72, 72) !important;
+  font-size: 20px !important;
+  text-size-adjust: 100%;
+}
+
+#allshirtssingleview-grid {
+  position: block;
+  margin-left: 5em;
+}
+
+#allshirtssingleview-sizes {
+  display: block;
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+#allshirtssingleview-price {
+  display: block;
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+#allshirtssingleview-btns {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  background-color: white;
+  margin-left: -23em;
+}
+
 .wireframe {
   margin-top: 2em;
 }
+
 .ui.footer.segment {
   bottom: 0;
   margin: 3em 0em 0em;

@@ -5,7 +5,8 @@ import {
   AllShirts,
   singleProduct,
   Footer,
-  orderList
+  orderList,
+  AllShirtsSingleView
 } from './components'
 import {Switch, Route, withRouter} from 'react-router-dom'
 import {connect} from 'react-redux'
@@ -32,7 +33,7 @@ class App extends Component {
         >
           <Switch>
             <Route exact path="/" component={AllShirts} />
-            <Route exact path="/products" component={AllShirts} />
+            <Route exact path="/products" component={AllShirtsSingleView} />
             <Route path="/products/:id" component={singleProduct} />
             <Route path="/orders" component={orderList} />
           </Switch>

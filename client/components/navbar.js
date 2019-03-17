@@ -11,18 +11,13 @@ const Navbar = props => {
   return (
     <Menu id="navbar" pointing stackable size="large" secondary borderless>
       <span id="navbar-menu-allT">
-        <Menu.Item as={Link} to="/products">
+        <Menu.Item as={Link} to="/">
           ALL TEES
         </Menu.Item>
       </span>
-      <span id="navbar-menu-allMensT">
+      <span id="navbar-menu-funnyTees">
         <Menu.Item as={Link} to="/products">
-          ALL MEN'S TEES
-        </Menu.Item>
-      </span>
-      <span id="navbar-menu-allWomensT">
-        <Menu.Item as={Link} to="/products">
-          ALL WOMEN'S TEES
+          FUNNY TEES
         </Menu.Item>
       </span>
       <Menu.Item>
