@@ -3,32 +3,37 @@ import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {logout} from '../store'
-import {Menu, Image, Dropdown, Button} from 'semantic-ui-react'
+import {Menu, Dropdown, Button} from 'semantic-ui-react'
 import CartModal from './cart'
 import Routes from '../routes'
 
 const Navbar = props => {
   return (
-    <Menu className="fixed" inverted color="grey" size="mini" borderless>
-      <Menu.Item as={Link} to="/">
-        <Image
-          circular
-          size="tiny"
-          centered
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3sW4v0GX7vobFgQe2WIU0KzUkbW1pvbJH5OVlOk9PLdmnkot-ow"
-        />
-      </Menu.Item>
+    <Menu id="navbar" pointing stackable size="large" secondary borderless>
+      <span id="navbar-menu-allT">
+        <Menu.Item as={Link} to="/products">
+          ALL TEES
+        </Menu.Item>
+      </span>
+      <span id="navbar-menu-allMensT">
+        <Menu.Item as={Link} to="/products">
+          ALL MEN'S TEES
+        </Menu.Item>
+      </span>
+      <span id="navbar-menu-allWomensT">
+        <Menu.Item as={Link} to="/products">
+          ALL WOMEN'S TEES
+        </Menu.Item>
+      </span>
       <Menu.Item>
         <Routes />
       </Menu.Item>
-      <Menu.Item>
+      <Menu.Item position="right">
         <CartModal />
       </Menu.Item>
       {props.isLoggedIn && (
         <Menu.Item>
-          <Button inverted onClick={props.handleClick}>
-            Logout
-          </Button>
+          <Button onClick={props.handleClick}>Logout</Button>
         </Menu.Item>
       )}
       {props.isLoggedIn && (

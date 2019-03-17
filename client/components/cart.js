@@ -24,7 +24,6 @@ const priceFormat = price => {
 const CartModal = props => {
   const {cart, userId} = props
   const isLoggedIn = !!userId
-
   let total = 0
 
   return (
@@ -54,7 +53,7 @@ const CartModal = props => {
                     <Item.Meta>
                       <span> {priceFormat(product.currentPrice)}</span>
                       <br />
-                      <span id="quantity-container">
+                      {/* { <span id="quantity-container">
                         {'Choose a quantity: '}
                         <Input
                           value={product.quantity}
@@ -63,8 +62,8 @@ const CartModal = props => {
                           }
                           type="number"
                           min="1"
-                        />
-                      </span>
+                        /> }
+                      </span> */}
                       <span id="remove-cart-container">
                         <RemoveFromCartButton
                           cart={cartItem}

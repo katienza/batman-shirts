@@ -1,5 +1,12 @@
 import React, {Component} from 'react'
-import {Navbar, AllShirts, singleProduct, Footer, orderList} from './components'
+import {
+  Headerbar,
+  Navbar,
+  AllShirts,
+  singleProduct,
+  Footer,
+  orderList
+} from './components'
 import {Switch, Route, withRouter} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {shirts} from './store/products'
@@ -16,7 +23,8 @@ class App extends Component {
     this.props.getCart(this.props.user.id)
     this.props.user.id && this.props.getOrders(this.props.user.id)
     return (
-      <div style={{overflowX: 'hidden', overflowY: 'scroll', height: '80vh'}}>
+      <div style={{overflowX: 'hidden', overflowY: 'scroll', height: '90vh'}}>
+        <Headerbar />
         <Navbar />
         <main
           className="ui main text"

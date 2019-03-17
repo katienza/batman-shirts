@@ -144,6 +144,7 @@ export const finishOrderGuest = () => {
 //REDUCER
 
 export default function(state = defaultCart, action) {
+  console.log('ACTION.PRODUCTS --', action.products)
   switch (action.type) {
     case GOT_CART:
       return action.userCart
